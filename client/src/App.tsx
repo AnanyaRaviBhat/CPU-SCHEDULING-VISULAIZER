@@ -1,7 +1,11 @@
-import Home from "./pages/Home";
+import SchedulerPage from "./pages/SchedulerPage";
 
 function App() {
-  return <Home />;
+  return (
+    <div className="min-h-screen bg-white">
+      <SchedulerPage />
+    </div>
+  );
 }
 
 export default App;

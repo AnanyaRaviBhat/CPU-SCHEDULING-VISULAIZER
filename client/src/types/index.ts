@@ -1,16 +1,19 @@
+// Process definition
 export interface Process {
   pid: string;
-  arrival: number;
-  burst: number;
-  priority?: number;
+  arrival: number | string; // ADD: Allow string
+  burst: number | string; // ADD: Allow string
+  priority?: number | string; // ADD: Allow string
 }
 
+// Gantt chart item
 export interface GanttChartItem {
   pid: string;
   start: number;
   end: number;
 }
 
+// Process result after scheduling
 export interface ProcessResult {
   pid: string;
   arrival: number;
@@ -21,6 +24,7 @@ export interface ProcessResult {
   response: number;
 }
 
+// API response
 export interface SchedulerResponse {
   ganttChart: GanttChartItem[];
   processResults: ProcessResult[];
@@ -31,10 +35,12 @@ export interface SchedulerResponse {
   };
 }
 
+// API request
 export interface SchedulerRequest {
-  algorithm: "FCFS" | "SJF" | "RR" | "PRIORITY";
+  algorithm: AlgorithmType;
   processes: Process[];
   quantum?: number;
 }
 
+// Algorithm type
 export type AlgorithmType = "FCFS" | "SJF" | "RR" | "PRIORITY";

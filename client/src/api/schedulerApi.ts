@@ -1,7 +1,7 @@
 import axios from "axios";
 import { type SchedulerRequest, type SchedulerResponse } from "../types";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "/api";
 
 export const scheduleProcesses = async (
   request: SchedulerRequest
